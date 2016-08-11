@@ -106,7 +106,7 @@
     $(document).ready(function(){
         $('.del').click(function(){
             var row = $(this).closest('tr');
-            if (confirm("确定删除")) {
+            if (confirm("请选择禁用用户，勿直接删除用户！请再次确认是否删除用户！")) {
             $.get(
                     $(this).attr('value'),
                     {},
@@ -119,7 +119,7 @@
 
         $('#del_btn').click(function(){
             var check_array = [];
-            if (confirm("确定删除")) {
+            if (confirm("请选择禁用用户，勿直接删除用户！请再次确认是否删除用户！")) {
                 $(".gradeX input:checked").each(function() {
                     check_array.push($(this).attr("value"))
                 });

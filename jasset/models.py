@@ -6,7 +6,10 @@ from juser.models import User, UserGroup
 
 ASSET_ENV = (
     (1, U'生产环境'),
-    (2, U'测试环境')
+    (2, U'测试环境'),
+    (3, U'开发环境'),
+    (4, U'集成测试SIT环境'),
+    (5, U'验收测试UAT环境'),
     )
 
 ASSET_STATUS = (
@@ -78,6 +81,26 @@ class Asset(models.Model):
     disk = models.CharField(max_length=1024, blank=True, null=True, verbose_name=u'硬盘')
     system_type = models.CharField(max_length=32, blank=True, null=True, verbose_name=u"系统类型")
     system_version = models.CharField(max_length=8, blank=True, null=True, verbose_name=u"系统版本号")
+    # add by jox Thu Aug 11 12:30:23 CST 2016
+    os_version = models.CharField(max_length=32, blank=True, null=True, verbose_name=u"OS版本")
+    kernel_version = models.CharField(max_length=32, blank=True, null=True, verbose_name=u"Kerne版本l")
+    physical_cpu = models.IntegerField(blank=True, null=True, verbose_name=u"插入物理CPU数")
+    cpu_core = models.IntegerField(blank=True, null=True, verbose_name=u"CPU核")
+    # add by jox Fri Aug 12 11:35:53 CST 2016
+    timezone = models.CharField(max_length=32, blank=True, null=True, verbose_name=u"时区")
+    nameserver = models.CharField(max_length=32, blank=True, null=True, verbose_name=u"DNS服务器")
+    domain = models.CharField(max_length=32, blank=True, null=True, verbose_name=u"域")
+    search = models.CharField(max_length=255, blank=True, null=True, verbose_name=u"域名查询顺序")
+    ntp_server = models.CharField(max_length=32, blank=True, null=True, verbose_name=u"NTP服务器")
+    umask = models.IntegerField(blank=True, null=True, verbose_name=u"umask权限掩码")
+    shmmax = models.IntegerField(blank=True, null=True, verbose_name=u"shmmax内存segment最大值")
+    shmmni = models.IntegerField(blank=True, null=True, verbose_name=u"shmmni内存segment最小值")
+    shmall = models.IntegerField(blank=True, null=True, verbose_name=u"shmall共享内存总量")
+    sem = models.CharField(max_length=64, blank=True, null=True, verbose_name=u'sem信号量限制')
+    file_max = models.IntegerField(blank=True, null=True, verbose_name=u"系统文件句柄数最大值")
+    ip_local_port_range = models.CharField(max_length=64, blank=True, null=True, verbose_name=u'预留服务端口范围')
+    splunk = models.CharField(max_length=64, blank=True, null=True, verbose_name=u'SPUNK Forwarder信息')
+    # over
     system_arch = models.CharField(max_length=16, blank=True, null=True, verbose_name=u"系统平台")
     cabinet = models.CharField(max_length=32, blank=True, null=True, verbose_name=u'机柜号')
     position = models.IntegerField(blank=True, null=True, verbose_name=u'机器位置')

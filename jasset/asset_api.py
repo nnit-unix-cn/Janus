@@ -357,7 +357,34 @@ def get_ansible_asset_info(asset_ip, setup_info):
     system_arch = setup_info.get("ansible_architecture")
     # asset_type = setup_info.get("ansible_system")
     sn = setup_info.get("ansible_product_serial")
-    asset_info = [other_ip, mac, cpu, memory_format, disk, sn, system_type, system_version, brand, system_arch]
+
+    # added by jox Thu Aug 11 12:39:43 CST 2016
+    os_version = setup_info.get("ansible_distribution_version")
+    kernel_version = setup_info.get("ansible_kernel")
+    physical_cpu = setup_info.get("ansible_processor_count")
+    cpu_core = setup_info.get("ansible_processor_cores")
+    # added by jox Fri Aug 12 12:18:59 CST 2016
+
+    date_time_all = setup_info.get("ansible_date_time")
+    if date_time_all:
+	timezone = date_time_all.get("tz")
+
+    dns_all = setup_info.get("ansible_dns")
+    print "test..."
+    if dns_all:
+        print "enter..."
+    	nameserver = ",".join(dns_all.get("nameservers"))
+    	#nameserver = dns_all.get("nameservers")[0]
+    	search = ",".join(dns_all.get("search"))
+    nameserver = "NA"
+    search = "NA"
+
+    domain = setup_info.get("ansible_domain")
+    # over
+    # modified by jox Thu Aug 11-12
+    #asset_info = [other_ip, mac, cpu, memory_format, disk, sn, system_type, system_version, brand, system_arch]
+    asset_info = [other_ip, mac, cpu, memory_format, disk, sn, system_type, system_version, brand, system_arch, os_version, kernel_version, physical_cpu, cpu_core, timezone, nameserver, domain, search]
+    # over
     return asset_info
 
 
@@ -377,7 +404,9 @@ def asset_ansible_update(obj_list, name=''):
             try:
                 asset_info = get_ansible_asset_info(asset.ip, setup_info)
                 print asset_info
-                other_ip, mac, cpu, memory, disk, sn, system_type, system_version, brand, system_arch = asset_info
+		# modified by jox Thu Aug 11-12 
+                #other_ip, mac, cpu, memory, disk, sn, system_type, system_version, brand, system_arch = asset_info
+                other_ip, mac, cpu, memory, disk, sn, system_type, system_version, brand, system_arch,os_version, kernel_version, physical_cpu, cpu_core, timezone, nameserver, domain, search = asset_info
                 asset_dic = {"other_ip": other_ip,
                              "mac": mac,
                              "cpu": cpu,
@@ -387,8 +416,19 @@ def asset_ansible_update(obj_list, name=''):
                              "system_type": system_type,
                              "system_version": system_version,
                              "system_arch": system_arch,
-                             "brand": brand
+                             "brand": brand,
+		# added by jox Thu Aug 11 13:28:18 CST 2016
+                             "os_version": os_version,
+                             "kernel_version": kernel_version,
+                             "physical_cpu": physical_cpu,
+                             "cpu_core": cpu_core,
+		# added bu jox Fri Aug 12 12:27:08 CST 2016
+                             "timezone": timezone,
+                             "nameserver": nameserver,
+                             "domain": domain,
+                             "search": search
                              }
+		# over
 
                 ansible_record(asset, asset_dic, name)
             except Exception as e:

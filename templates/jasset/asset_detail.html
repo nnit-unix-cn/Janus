@@ -84,10 +84,6 @@
                                         <td>{{ asset.use_default_auth|bool2str }} {% if not asset.use_default_auth %} <span class="text-info">{{ asset.username }}</span> {% endif %}</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-navy">机房</td>
-                                        <td>{{ asset.idc.name|default_if_none:"" }}</td>
-                                    </tr>
-                                    <tr>
                                         <td class="text-navy">硬件厂商型号</td>
                                         <td>{{ asset.brand|default_if_none:"" }}</td>
                                     </tr>
@@ -95,6 +91,14 @@
                                         <td class="text-navy">CPU</td>
                                         <td>{{ asset.cpu|default_if_none:"" }}</td>
                                     </tr>
+                                    <tr>
+                                        <td class="text-navy">插入物理CPU数</td>
+                                        <td>{{ asset.physical_cpu|default_if_none:"" }}</td>
+                                    </tr
+                                    <tr>
+                                        <td class="text-navy">CPU核</td>
+                                        <td>{{ asset.cpu_core|default_if_none:"" }}</td>
+                                    </tr
                                     <tr>
                                         <td class="text-navy">内存</td>
                                         <td>{{ asset.memory|default_if_none:"" }}{% if asset.memory %}G{% endif %}</td>
@@ -114,24 +118,53 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-navy">资产编号</td>
-                                        <td>{{ asset.number|default_if_none:"" }}</td>
+                                        <td class="text-navy">系统版本</td>
+                                        <td>{{ asset.system_type|default_if_none:"" }} {{ asset.system_version|default_if_none:"" }}</td>
+                                    </tr
+                                    <tr>
+                                        <td class="text-navy">内核版本</td>
+                                        <td>{{ asset.kernel_version|default_if_none:"" }}</td>
+                                    </tr
+                                    <tr>
+                                        <td class="text-navy">系统平台</td>
+                                        <td>{{ asset.system_arch|default_if_none:"" }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-navy">系统参数</td>
+                                        <td>
+                                            <table class="table">
+                                            <tr>
+                                                <td><span class="text-navy">时区</span> &nbsp&nbsp&nbsp {{ asset.timezone|default_if_none:"" }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="text-navy">DNS服务器</span> &nbsp&nbsp&nbsp {{ asset.nameserver|default_if_none:"" }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="text-navy">域</span> &nbsp&nbsp&nbsp {{ asset.domain|default_if_none:"" }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="text-navy">域名查询顺序</span> &nbsp&nbsp&nbsp {{ asset.search|default_if_none:"" }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="text-navy">NTP服务器</span> &nbsp&nbsp&nbsp {{ asset.ntpserver|default_if_none:"" }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="text-navy">umask权限掩码</span> &nbsp&nbsp&nbsp {{ asset.umask|default_if_none:"" }}</td>
+                                            </tr>
+                                            </table>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="text-navy">SN</td>
                                         <td>{{ asset.sn|default_if_none:"" }}</td>
                                     </tr>
                                     <tr>
+                                        <td class="text-navy">资产编号</td>
+                                        <td>{{ asset.number|default_if_none:"" }}</td>
+                                    </tr>
+                                    <tr>
                                         <td class="text-navy">主机类型</td>
                                         <td>{{ asset.get_asset_type_display|default_if_none:"" }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-navy">系统版本</td>
-                                        <td>{{ asset.system_type|default_if_none:"" }} {{ asset.system_version|default_if_none:"" }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-navy">系统平台</td>
-                                        <td>{{ asset.system_arch|default_if_none:"" }}</td>
                                     </tr>
                                     <tr>
                                         <td class="text-navy">运行环境</td>
@@ -140,6 +173,10 @@
                                     <tr>
                                         <td class="text-navy">机器状态</td>
                                         <td>{{ asset.get_status_display|default_if_none:"" }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-navy">机房</td>
+                                        <td>{{ asset.idc.name|default_if_none:"" }}</td>
                                     </tr>
                                     <tr>
                                         <td class="text-navy">机柜号</td>

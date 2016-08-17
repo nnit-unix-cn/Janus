@@ -214,6 +214,9 @@ def Logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
+@require_role('user')
+def help(request):
+    return render_to_response('help.html')
 
 @require_role('admin')
 def setting(request):

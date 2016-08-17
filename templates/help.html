@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>Janus</title>
+
+    <link rel="shortcut icon" href="/static/img/facio.ico" type="image/x-icon">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="/static/css/animate.css" rel="stylesheet">
+<link href="/static/css/style.css" rel="stylesheet">
+<link href="/static/css/colorbox.css" rel="stylesheet">
+<link href="/static/css/vaildator/jquery.validator.css" rel="stylesheet">
+<link href="/static/css/magnific/magnific-popup.css" rel="stylesheet">
+<link href="/static/css/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+<link href="/static/css/plugins/dropzone/basic.css" rel="stylesheet">
+<link href="/static/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <script src="/static/js/jquery-2.1.1.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/base.js"></script>
+
+<!-- pop windows -->
+<script src="/static/js/jquery.colorbox.js"></script>
+
+<!-- validator js -->
+<script src="/static/js/validator/jquery.validator.js"></script>
+<script src="/static/js/validator/zh_CN.js"></script>
+<script src="/static/js/datapicker/bootstrap-datepicker.js"></script>
+
+
+     
+</head>
+
+<body>
+
+    <div id="wrapper">
+        
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+
+            <li id="index">
+               <a href="/"><i class="fa fa-dashboard"></i> <span class="nav-label">仪表盘</span><span class="label label-info pull-right"></span></a>
+            </li>
+            <li id="juser">
+                <a href="#"><i class="fa fa-group"></i> <span class="nav-label">用户管理</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li class="group"><a href="/juser/group/list/">查看用户组</a></li>
+                    <li class="user"><a href="/juser/user/list/">查看用户<span class="label label-primary pull-right">1/1</span></a></li>
+                </ul>
+            </li>
+            <li id="jasset">
+                <a><i class="fa fa-inbox"></i> <span class="nav-label">资产管理</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li class="group"><a href="/jasset/group/list/">查看资产组</a></li>
+                    <li class="asset"> <a href="/jasset/asset/list/">查看资产<span class="label label-info pull-right">0/0</span></a></li>
+                    <li class="idc"> <a href="/jasset/idc/list/">查看机房</a></li>
+                </ul>
+            </li>
+            <li id="jperm">
+                <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">授权管理</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li class="sudo">
+                        <a class="sudo" href="/jperm/sudo/list/">Sudo</a>
+                    </li>
+                    <li class="role">
+                        <a href="/jperm/role/list/">系统用户</a>
+                    </li>
+                    <li class="rule">
+                        <a href="/jperm/rule/list/">授权规则</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="jlog">
+               <a href="/jlog/list/online/"><i class="fa fa-files-o"></i> <span class="nav-label">日志审计</span><span class="label label-info pull-right"></span></a>
+            </li>
+            <li id="file">
+                <a href="#"><i class="fa fa-download"></i> <span class="nav-label">上传下载</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li class="upload"><a href="/file/upload/">文件上传</a></li>
+                    <li class="download"><a href="/file/download/">文件下载</a></li>
+                </ul>
+            </li>
+            <li id="setting">
+                   <a href="/setting"><i class="fa fa-gears"></i> <span class="nav-label">设置</span><span class="label label-info pull-right"></span></a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+
+
+
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                
+
+<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        <form role="search" class="navbar-form-custom" method="get" action="">
+            <div class="form-group">
+                <input type="text" placeholder="输入搜索..." class="form-control" name="search" id="top-search">
+            </div>
+        </form>
+    </div>
+    <ul class="nav navbar-top-links navbar-right">
+        <li>
+            <span class="m-r-sm text-muted welcome-message">欢迎使用Janus</span>
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                 <span class="m-r-sm text-muted welcome-message">帮助</span>
+            </a>
+        </li>
+        <li>
+            <a href="/logout/">
+                <i class="fa fa-sign-out"></i> Log out
+            </a>
+        </li>
+    </ul>
+</nav>
+
+            </div>
+            
+    <div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-10">
+        <h2>帮助</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="/">首页</a>
+            </li>
+            <li>
+            
+                <a>帮助</a>
+            
+            </li>
+            
+        </ol>
+    </div>
+    <div class="col-sm-2">
+    </div>
+</div>
+
+
+
+
+
+            <div class="footer fixed">
+    <div class="pull-right">
+        Version <strong>0.3.2</strong> GPL.
+    </div>
+    <div>
+        <a href="http://mobaxterm.mobatek.net/MobaXterm_v9.1.zip">点击下载推荐客户端MobaXterm</a>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+</body>
+    <!-- Mainly scripts -->
+<script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/static/js/bootstrap-dialog.js"></script>
+<script src="/static/js/mindmup-editabletable.js"></script>
+<script src="/static/js/plugins/fullcalendar/moment.min.js"></script>
+<script src="/static/js/plugins/fullcalendar/fullcalendar.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="/static/js/inspinia.js"></script>
+<script src="/static/js/plugins/pace/pace.min.js"></script>
+
+<!-- Peity -->
+<script src="/static/js/plugins/peity/jquery.peity.min.js"></script>
+
+<!-- Peity -->
+<script src="/static/js/demo/peity-demo.js"></script>
+
+<script src="/static/js/base.js"></script>
+
+<!-- pop windows layer-->
+<script src="/static/js/layer/layer.js"></script>
+
+<!-- highcharts -->
+<script src="/static/js/highcharts/highcharts.js"></script>
+
+
+<script src="/static/js/dropzone/dropzone.js"></script>
+<!-- active menu -->
+<script>
+    var url_array = document.location.pathname.split("/");
+    s1 = url_array[1];
+    s2 = url_array[2];
+    if (s1 == ''){
+        $('#index').addClass('active')
+    } else {
+        $("#"+s1).addClass('active');
+        $('#'+s1+' .'+s2).addClass('active');
+    }
+</script>
+
+
+</html>

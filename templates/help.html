@@ -11,27 +11,27 @@
 
     <link rel="shortcut icon" href="/static/img/facio.ico" type="image/x-icon">
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-<link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet">
-<link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
-<link href="/static/css/animate.css" rel="stylesheet">
-<link href="/static/css/style.css" rel="stylesheet">
-<link href="/static/css/colorbox.css" rel="stylesheet">
-<link href="/static/css/vaildator/jquery.validator.css" rel="stylesheet">
-<link href="/static/css/magnific/magnific-popup.css" rel="stylesheet">
-<link href="/static/css/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
-<link href="/static/css/plugins/dropzone/basic.css" rel="stylesheet">
-<link href="/static/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+	<link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/static/css/animate.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/colorbox.css" rel="stylesheet">
+    <link href="/static/css/vaildator/jquery.validator.css" rel="stylesheet">
+    <link href="/static/css/magnific/magnific-popup.css" rel="stylesheet">
+    <link href="/static/css/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+    <link href="/static/css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="/static/css/plugins/dropzone/dropzone.css" rel="stylesheet">
     <script src="/static/js/jquery-2.1.1.js"></script>
-<script src="/static/js/bootstrap.min.js"></script>
-<script src="/static/js/base.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/base.js"></script>
 
-<!-- pop windows -->
-<script src="/static/js/jquery.colorbox.js"></script>
-
-<!-- validator js -->
-<script src="/static/js/validator/jquery.validator.js"></script>
-<script src="/static/js/validator/zh_CN.js"></script>
-<script src="/static/js/datapicker/bootstrap-datepicker.js"></script>
+    <!-- pop windows -->
+    <script src="/static/js/jquery.colorbox.js"></script>
+    
+    <!-- validator js -->
+    <script src="/static/js/validator/jquery.validator.js"></script>
+    <script src="/static/js/validator/zh_CN.js"></script>
+    <script src="/static/js/datapicker/bootstrap-datepicker.js"></script>
 
 
      
@@ -43,29 +43,31 @@
         
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
+<br><br><br><br><br>
         <ul class="nav" id="side-menu">
-
-            <li id="index">
-               <a href="/"><i class="fa fa-dashboard"></i> <span class="nav-label">仪表盘</span><span class="label label-info pull-right"></span></a>
+			
+            <li id="introduction">
+               <a href="#introduction"><i class="fa fa-dashboard"></i> <span class="nav-label">平台介绍</span><span class="label label-info pull-right"></span></a>
             </li>
-            <li id="juser">
-                <a href="#"><i class="fa fa-group"></i> <span class="nav-label">用户管理</span><span class="fa arrow"></span></a>
+            <li id="account">
+            	<a href="#account"><i class="fa fa-group"></i> <span class="nav-label">账号管理</span><span class="label label-info pull-right"></span></a>
+                <!--<a href="#account"><i class="fa fa-group"></i> <span class="nav-label">账号管理</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li class="group"><a href="/juser/group/list/">查看用户组</a></li>
                     <li class="user"><a href="/juser/user/list/">查看用户<span class="label label-primary pull-right">1/1</span></a></li>
-                </ul>
+                </ul>-->
             </li>
-            <li id="jasset">
-                <a><i class="fa fa-inbox"></i> <span class="nav-label">资产管理</span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
+            <li id="asset">
+                <a><i class="fa fa-inbox"></i> <span class="nav-label">资产管理</span><span class="label label-info pull-right"></span></a>
+                <!--<ul class="nav nav-second-level">
                     <li class="group"><a href="/jasset/group/list/">查看资产组</a></li>
                     <li class="asset"> <a href="/jasset/asset/list/">查看资产<span class="label label-info pull-right">0/0</span></a></li>
                     <li class="idc"> <a href="/jasset/idc/list/">查看机房</a></li>
-                </ul>
+                </ul>-->
             </li>
-            <li id="jperm">
-                <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">授权管理</span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
+            <li id="ssh">
+                <a href="#ssh"><i class="fa fa-edit"></i> <span class="nav-label">SSH登陆</span><span class="label label-info pull-right"></span></a>
+                <!--<ul class="nav nav-second-level">
                     <li class="sudo">
                         <a class="sudo" href="/jperm/sudo/list/">Sudo</a>
                     </li>
@@ -75,21 +77,24 @@
                     <li class="rule">
                         <a href="/jperm/rule/list/">授权规则</a>
                     </li>
-                </ul>
+                </ul>-->
             </li>
-            <li id="jlog">
-               <a href="/jlog/list/online/"><i class="fa fa-files-o"></i> <span class="nav-label">日志审计</span><span class="label label-info pull-right"></span></a>
+            
+            <li id="auth">
+                   <a href="#suth"><i class="fa fa-gears"></i> <span class="nav-label">认证授权</span><span class="label label-info pull-right"></span></a>
             </li>
-            <li id="file">
-                <a href="#"><i class="fa fa-download"></i> <span class="nav-label">上传下载</span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
+            
+            <li id="audit">
+               <a href="#audit"><i class="fa fa-files-o"></i> <span class="nav-label">日志审计</span><span class="label label-info pull-right"></span></a>
+            </li>
+            <li id="uploaddownload">
+                <a href="#uploaddownload"><i class="fa fa-download"></i> <span class="nav-label">上传下载</span><span class="label label-info pull-right"></span></a>
+                <!--<ul class="nav nav-second-level">
                     <li class="upload"><a href="/file/upload/">文件上传</a></li>
                     <li class="download"><a href="/file/download/">文件下载</a></li>
-                </ul>
+                </ul>-->
             </li>
-            <li id="setting">
-                   <a href="/setting"><i class="fa fa-gears"></i> <span class="nav-label">设置</span><span class="label label-info pull-right"></span></a>
-            </li>
+            
         </ul>
 
     </div>
@@ -149,10 +154,65 @@
     </div>
 </div>
 
+<!----------------------------------------------------------------------->
+<div class="content body">
 
+<section id='introduction'>
+  <h2 class='page-header'><a href="#introduction">平台介绍</a></h2>  
+    <p>Janus平台致力于将日常运维工作中遇到的痛点进行有效的优化，是一个集账号管理、认证授权、资产管理、审计、运维自动化、堡垒机等诸多功能为一体的综合平台。由NNIT UNIX/Linux & Virtualization Operation团队在开源项目的基础上，结合公司的规则和流程进行二次开发而成。</p>
+</section><!-- /#introduction -->
 
+<section id='account'>
+  <h2 class='page-header'><a href="#account">账号管理</a></h2>  
+    <p>首次创建账号：由管理员依照NNIT账号管理相关规则创建账号，相关账号信息、初始登陆密码、密钥下载地址、密钥二次验证密码会以邮件形式发送至邮箱。</p>
+    <p>成功登陆web界面后，可以点击头像下侧下拉菜单中的“<a href="/juser/user/update/">修改信息</a>”随时更新登陆密码以及重新生成密钥。请注意，密钥的二次认证口令只会显示<b>一次</b>，请务必妥善保存。</p>
+</section><!-- /#account -->
 
+<section id='asset'>
+  <h2 class='page-header'><a href="#asset">资产管理</a></h2>  
+    <p>在“<a href="/jasset/asset/list/">查看主机</a>”菜单中可以查看有权限的主机清单，点击对应主机名，可以显示主机的详细配置信息（CI）；点击<a class="conn btn btn-xs btn-warning">连接</a>可以进入web终端进行相关的管理操作。</p>
+    <p>选中多台主机，点击<input type="button" class="btn btn-sm btn-primary" value="执行命令">，可以批量执行命令。请注意，从安全角度考虑，该模式下<b>不支持</b>sudo等特权命令。</p>
+</section><!-- /#asset -->
 
+<section id='ssh'>
+  <h2 class='page-header'><a href="#ssh">SSH登陆</a></h2>  
+    <p>准备工作：</p>
+    <li>1.请安装支持pem格式密钥的ssh终端软件，如SecureCRT、MobaXterm、XShell等，推荐使用MobaXterm，<a href="http://mobaxterm.mobatek.net/MobaXterm_v9.1.zip">点此下载免安装版本</a>。注：putty不支持pem格式的密钥。</li>
+    <li>2.打开软件，以SSH协议连接到Janus服务器，端口号22，导入私钥，点击确定后尝试连接。在连接过程中会提示输入二次认证口令，正确输入后，会进入Janus服务器。</li>
+    <br>
+    <p>根据引导提示：</p>
+    <li>1.直接输入主机名或IP地址或备注信息的部分或全部字段，可以快速检索出符合条件的主机，如检索结果唯一，则会直接登录进入。</li>
+    <li>2.输入/+主机名或IP地址或备注信息的部分或全部字段进行检索，但只会显示检索结果，不会登录到主机。</li>
+    <li>3.输入字母P或P，将显示当前有权限的主机列表。继而输入对应的主机id或主机名、IP地址、备注信息，可以直接登录该主机。</li>
+    <li>4.输入字母G或g，将显示当前有权限的主机组。</li>
+    <li>5.输入 G/g + 组ID 显示该组下主机，比如输入g1，将显示1号主机组下的全部主机。</li>
+    <li>6.输入字母E或e，将调用ansible允许批量执行shell命令，但请注意，从安全角度考虑，该模式下<b>不支持</b>sudo等特权命令。</li>
+    <li>7.输入字母H或h，将重新输出帮助信息。</li>
+    <li>8.输入字母Q或q，将推出Janus。</li>
+    
+</section><!-- /#uploaddownload -->
+
+<section id='auth'>
+  <h2 class='page-header'><a href="#auth">认证授权</a></h2>  
+    <p>Janus将改变传统的认证授权模式，由Janus平台管理全部的账号和授权信息，被管理服务器中不存在任何个人账户，任何人通过Janus的认证后，都会以一个拥有特殊权限的系统账号登录被管理服务器，如oracle、readonly、admin等，当同一用户拥有多个系统账号权限时，会提示用户选择其一。</p>
+</section><!-- /#auth -->
+
+<section id='audit'>
+  <h2 class='page-header'><a href="#audit">日志审计</a></h2>  
+    <p>审计功能仅对超级管理员可见。</p>
+    <p>用户的登录日志、所有登录后的操作日志、任何输入输出将会被记录，并支持录像回放等审计手段，审计日志将会被严格保密，任何非授权用户都无权查看审计日志。</p>
+</section><!-- /#audit -->
+
+<section id='uploaddownload'>
+  <h2 class='page-header'><a href="#uploaddownload">上传、下载文件</a></h2>  
+    <p>上传：支持一次性上传同一文件至多台服务器，上传文件大小暂限制在200MB，请勿大量上传无用的大文件。</p>
+    <p>下载：支持一次性从多台主机的同一路径下载同名文件，下载文件大小暂限制在200MB。</p>
+</section><!-- /#uploaddownload -->
+
+<br><br><br><br><br><br>
+
+</div>
+<!----------------------------------------------------------------------->
             <div class="footer fixed">
     <div class="pull-right">
         Version <strong>0.3.2</strong> GPL.

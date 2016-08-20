@@ -214,6 +214,7 @@ def Logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
+# Add help page. by Coffey
 @require_role('user')
 def help(request):
     return render_to_response('help.html')

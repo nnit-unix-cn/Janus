@@ -4,6 +4,7 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('jumpserver.views',
     # Examples:
     url(r'^$', 'index', name='index'),
+    # Add help page. by Coffey
     url(r'^help/$', 'help', name='help'),
     # url(r'^api/user/$', 'api_user'),
     url(r'^skin_config/$', 'skin_config', name='skin_config'),
